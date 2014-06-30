@@ -403,7 +403,8 @@ module.exports = function (grunt) {
 
     mochaTest: {
       options: {
-        reporter: 'spec'
+        reporter: 'spec',
+        timeout: 8000
       },
       src: ['test/server/**/*.js']
     },

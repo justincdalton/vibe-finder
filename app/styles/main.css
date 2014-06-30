@@ -5,7 +5,13 @@ body {
 }
 
 /* Place styles */
+.place-title {
+  margin-left: 20px;
+}
 
+.place-rating {
+  margin: 20px 20px 0 0;
+}
 
 /* custom form styles */
 .btn {

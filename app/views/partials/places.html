@@ -1,10 +1,12 @@
+<div ng-include="'partials/navbar'"></div>
 
 <div>
   <h1 class="row text-center">Here are some Vibes</h1>
 
   <div class="panel panel-default" ng-repeat="place in places">
     <div class="clearfix">
-      <h2 class="place-title pull-left">{{place.name}}</h2>
+      <a href="{{place.url}}">
+        <h2 class="place-title pull-left">{{place.name}}</h2></a>
       <img class="place-rating pull-right" src="{{place.rating_img_url_large}}" alt="{{rating}}" />
     </div>
     <div class="panel-body">
@@ -13,7 +15,8 @@
           <img class="img-circle" src="{{place.snippet_image_url}}" alt="{{place.name}}" />
         </div>
         <div class="col-md-10">
-          {{place.snippet_text}}
+          <p><em>{{place.getCategories()}}</em></p>
+          <p>{{place.snippet_text}}</p>
         </div>
       </div>
     </div>
