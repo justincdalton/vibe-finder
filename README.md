@@ -6,7 +6,28 @@ A simple app using the Yelp api to help you find your place. Select your Vibe, s
 
 * Node.js - The app is built on node.js, so you will definitely need it installed
 * MongoDB - You will need MongoDB installed in order to run this app
-* Grunt - Grunt can be used to easily build and run the app with the command `grunt serve`
+* Grunt - Grunt is used to easily build and run the app
+* Bower - Bower makes it easy to get all of the required vendor scripts
+
+### Build and Run
+
+Getting the app running is very easy. First setup the node.js components:
+
+`
+npm install
+`
+
+Next pull down the vendor scripts with bower:
+
+`
+bower install
+`
+
+And finally run the app with grunt:
+
+`
+grunt serve
+`
 
 ### Next Steps
 
