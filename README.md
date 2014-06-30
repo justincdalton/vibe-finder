@@ -45,7 +45,7 @@ grunt test
 
 ### Next Steps
 
-* UI
-* Location awareness
 * Save places
+* Update UI
+* Location awareness
 * Personal selections and overviews
