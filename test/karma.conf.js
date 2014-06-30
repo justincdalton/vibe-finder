@@ -15,7 +15,14 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
-    files: [],
+    files: [
+      '../app/bower_components/angular/angular.js',
+      '../app/bower_components/angular-mocks/angular-mocks.js',
+      '../app/bower_components/angular-route/angular-route.js',
+      '../app/bower_components/angular-resource/angular-resource.js',
+      '../app/scripts/**/*.js',
+      'client/**/*.js'
+    ],
 
     // list of files / patterns to exclude
     exclude: [],

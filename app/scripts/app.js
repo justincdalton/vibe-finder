@@ -1,9 +1,7 @@
 'use strict';
 
 angular.module('vibeFinderApp', [
-  'ngCookies',
   'ngResource',
-  'ngSanitize',
   'ngRoute'
 ])
   .config(function ($routeProvider, $locationProvider) {
@@ -11,6 +9,10 @@ angular.module('vibeFinderApp', [
       .when('/', {
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
+      })
+      .when('/places/:vibe/:neighborhood', {
+        templateUrl: 'partials/places',
+        controller: 'PlacesCtrl'
       })
       .otherwise({
         redirectTo: '/'

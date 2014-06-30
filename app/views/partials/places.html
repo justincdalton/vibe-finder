@@ -1,0 +1,21 @@
+
+<div>
+  <h1 class="row text-center">Here are some Vibes</h1>
+
+  <div class="panel panel-default" ng-repeat="place in places">
+    <div class="clearfix">
+      <h2 class="place-title pull-left">{{place.name}}</h2>
+      <img class="place-rating pull-right" src="{{place.rating_img_url_large}}" alt="{{rating}}" />
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-2">
+          <img class="img-circle" src="{{place.snippet_image_url}}" alt="{{place.name}}" />
+        </div>
+        <div class="col-md-10">
+          {{place.snippet_text}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

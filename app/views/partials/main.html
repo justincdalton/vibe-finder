@@ -1,21 +1,32 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
+<div class="row text-center btn-toolbar">
+  <h3>What's your Vibe?</h3>
+
+  <button class="btn btn-info"
+    ng-repeat="vibe in vibes | orderBy:'text'"
+    ng-class="{active : searchQuery.isActiveVibe(vibe.text)}"
+    ng-click="searchQuery.selectVibe(vibe.text)">
+    {{vibe.text}}</button>
 </div>
 
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-  </div>
+<div class="row text-center btn-toolbar">
+  <h3>Where do you want to be?</h3>
+
+  <button class="btn btn-info"
+    ng-repeat="neighborhood in neighborhoods"
+    ng-class="{active : searchQuery.isActiveNeighborhood(neighborhood.text)}"
+    ng-click="searchQuery.selectNeighborhood(neighborhood.text)">
+    {{neighborhood.text}}</button>
 </div>
+
+<h1 class="text-center">
+  <button class="btn btn-success btn-lg btn-block"
+    ng-disabled="!searchQuery.searchable()"
+    ng-click="searchQuery.search()">
+    Find a Vibe</button>
+</h1>
 
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
+  <p>Justin Dalton 2014</p>
 </div>

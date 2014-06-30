@@ -12,17 +12,30 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/awesomeThings')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+    $httpBackend.expectGET('/api/vibes')
+      .respond(['Vibe1', 'Vibe2']);
+    $httpBackend.expectGET('/api/neighborhoods')
+      .respond(['Neighborhood1', 'Neighborhood2']);
+
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+      $scope: scope,
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings).toBeUndefined();
+  it('should attach a list of vibes to the scope', function () {
+    expect(scope.vibes.length).toBe(0);
     $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
+    expect(scope.vibes.length).toBe(2);
+  });
+
+  it('should attach a list of neighborhoods to the scope', function () {
+    expect(scope.neighborhoods.length).toBe(0);
+    $httpBackend.flush();
+    expect(scope.neighborhoods.length).toBe(2);
+  });
+
+  it('should attach the searchQuery instance to the scope', function () {
+    expect(scope.searchQuery).toBeTruthy();
   });
 });
